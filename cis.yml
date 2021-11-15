@@ -1,0 +1,8 @@
+---
+- hosts: a
+  gather_facts: yes
+  become: yes
+  # ignore_errors: "{{ ansible_check_mode }}"
+  roles:
+    - ansible-cis-ubuntu
+  environment: "{{ proxy_env | default({}) }}"
